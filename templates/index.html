@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender Recognition by Voice and Speech Analysis</title>
+    
+</head>
+
+<body>
+
+    <div style="font-size: 20px;">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Gender Recognition</h2>
+
+
+            
+            
+            <h3>Mean Frequency(in kHz)</h3><br><input id="second" name="meanfreq" required="required">            
+            <h3>Standard Deviation of Frequency</h3><input id="third" name="sd" required="required">            
+            <h3>Median Frequency(in kHz)</h3><br><input id="third" name="median" required="required">            
+            <h3>First Quantile(in kHz)</h3><br><input id="third" name="Q25" required="required">            
+            <h3>Third Quantile(in kHz)</h3><br><input id="third" name="Q75" required="required">            
+            <h3>Skewness</h3><br><input id="third" name="skew" required="required">
+	    <h3>Spectral Entropy</h3><br><input id="third" name="sp.ent" required="required">
+	    <h3>Spectral Flatness</h3><br><input id="third" name="sfm" required="required">
+	    <h3>Mode Frequency</h3><br><input id="third" name="mode" required="required">
+	    <h3>Average Fundamental Frequency</h3><br><input id="third" name="meanfun" required="required">
+	    <h3>Minimum Fundamental Frequency</h3><br><input id="third" name="minfun" required="required">
+	    <h3>Maximum Fundamental Frequency</h3><br><input id="third" name="maxfun" required="required">
+	    <h3>Average Dominant Frequency</h3><br><input id="third" name="meandom" required="required">
+	    <h3>Minimum Dominant Frequency</h3><br><input id="third" name="mindom" required="required">
+	    <h3>Range of Dominant Frequency</h3><br><input id="third" name="dfrange" required="required">
+	    <h3>Modulation Index</h3><br><input id="third" name="modindx" required="required">
+                             
+               
+
+            <br><br><button id="sub" type="submit ">Predict Gender</button>
+            <br>
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-image: url('/static/image.jpg');
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 110px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+
+
+
+       
+    </style>
+</body>
+
+</html>
